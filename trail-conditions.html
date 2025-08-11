@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check real-time trail conditions for Kitchener–Waterloo, including reports on surface, weather, and seasonal access.">
     <title>Trail Conditions - Local Trail Guide</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,14 +11,14 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">LOCAL TRAIL GUIDE</div>
+                <a href="index.html" class="logo">LOCAL TRAIL GUIDE</a>
                 <nav>
                     <ul>
                         <li><a href="index.html">HOME</a></li>
                         <li><a href="easy-trails.html">EASY TRAILS</a></li>
                         <li><a href="advanced-trails.html">ADVANCED TRAILS</a></li>
                         <li><a href="trail-maps.html">MAPS & DIRECTIONS</a></li>
-                        <li><a href="trail-conditions.html">TRAIL CONDITIONS</a></li>
+                        <li><a href="trail-conditions.html" class="active">TRAIL CONDITIONS</a></li>
                         <li><a href="safety-tips.html">SAFETY TIPS</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                     </ul>
@@ -181,10 +182,28 @@
                 </ul>
             </div>
 
-            <div style="text-align: center;">
-                <a href="#" class="btn btn-primary">Submit Trail Report</a>
-                <a href="#" class="btn btn-secondary">View Report Guidelines</a>
-            </div>
+            <form action="mailto:info@localtrailguide.ca" method="post" enctype="text/plain"
+                style="background: white; padding: 1.5rem; border-radius: 10px;">
+                <label for="trailName">Trail Name:</label><br>
+                <input type="text" id="trailName" name="trailName" required style="width: 100%; margin-bottom: 1rem;">
+            
+                <label for="visitDate">Date Visited:</label><br>
+                <input type="date" id="visitDate" name="visitDate" required style="width: 100%; margin-bottom: 1rem;">
+            
+                <label for="conditions">Trail Conditions:</label><br>
+                <select id="conditions" name="conditions" style="width: 100%; margin-bottom: 1rem;">
+                    <option value="dry">Dry</option>
+                    <option value="muddy">Muddy</option>
+                    <option value="icy">Icy</option>
+                    <option value="snowy">Snowy</option>
+                    <option value="closed">Closed</option>
+                </select>
+            
+                <label for="notes">Additional Notes:</label><br>
+                <textarea id="notes" name="notes" rows="4" style="width: 100%; margin-bottom: 1rem;"></textarea>
+            
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
         </div>
 
         <h2>Emergency & Contact Information</h2>
